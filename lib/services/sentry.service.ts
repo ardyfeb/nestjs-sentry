@@ -38,6 +38,8 @@ export class SentryService extends Logger {
             new Sentry.Integrations.OnUnhandledRejection({mode: 'warn'})
           ]
         });
+
+        this.app = options.customName || this.app;
       }
 
   log(message: string, context?: string) {
